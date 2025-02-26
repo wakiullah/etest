@@ -5,6 +5,29 @@ import { FaSearch } from "react-icons/fa";
 import heroGif from '@/public/assests/HeroGif.gif'
 import Image from 'next/image';
 
+const heroDetails = [
+    {
+        quantity: 3,
+        title: 'Online Courses',
+        icon: <TfiLayoutAccordionList size={30} />,
+        bgcolor: '#3872BF'
+    },
+    {
+        quantity: 5,
+        title: 'Expert instructor',
+        icon: <TfiLayoutAccordionList size={30} />,
+        bgcolor: '#SD45GD'
+
+    },
+    {
+        quantity: 700,
+        title: 'Enrolled Students',
+        icon: <TfiLayoutAccordionList size={30} />,
+        bgcolor: '#3872BF'
+
+    },
+]
+
 export default function Hero() {
     return (
         <section className="text-center p-10 md:p-20 flex flex-col md:flex-row items-center justify-between mt-10">
@@ -17,23 +40,18 @@ export default function Hero() {
                 </p>
                 {<Input type={'text'} placeholder={'Search Program'} buttonText={<FaSearch className="w-full" />} />}
                 <section className="flex flex-wrap justify-center gap-6 mt-10">
-                    <div className="bg-[#3872BF] bg-opacity-[20%] p-4 rounded flex justify-between text-center">
-                        <div className="items-center flex">
-                            <TfiLayoutAccordionList size={30} />
+
+                    {heroDetails.map((item, i) => {
+                        return <div key={i} className={`bg-[${item.bgcolor}] bg-opacity-[20%] p-3 rounded flex justify-between text-center`}>
+                            <div className="items-center flex">
+                                {item.icon}
+                            </div>
+                            <div className="text-left pl-3">
+                                <p className="text-xl font-bold">{item.quantity}+</p>
+                                <p className="text-gray-600">{item.title}</p>
+                            </div>
                         </div>
-                        <div className="text-left pl-3">
-                            <p className="text-xl font-bold">03+</p>
-                            <p className="text-gray-600">Online Courses</p>
-                        </div>
-                    </div>
-                    <div className="bg-gray-100 p-4 rounded text-center">
-                        <p className="text-xl font-bold">150+</p>
-                        <p className="text-gray-600">Expert Instructors</p>
-                    </div>
-                    <div className="bg-gray-100 p-4 rounded text-center">
-                        <p className="text-xl font-bold">2500+</p>
-                        <p className="text-gray-600">Enrolled Students</p>
-                    </div>
+                    })}
                 </section>
             </div>
             <div className="md:w-1/2 hidden md:flex justify-center ">
