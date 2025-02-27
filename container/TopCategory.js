@@ -1,3 +1,5 @@
+import Heading from "@/components/UI/Heading";
+import { useEffect, useState } from "react";
 import { FaPalette, FaCameraRetro, FaBullhorn, FaHeartbeat, FaRobot, FaLaptopCode, FaChartLine, FaDatabase, FaMusic, FaBrain } from "react-icons/fa";
 
 const categories = [
@@ -14,8 +16,8 @@ const categories = [
 ];
 
 const CategoryCard = ({ name, Icon, courses }) => (
-    <div className=" flex flex-col items-center p-4 bg-white  w-40 text-center">
-        <div className="w-20 h-20 flex items-center justify-center rounded-full bg-green-100 text-4xl text-primary transition-colors duration-300 hover:bg-primary hover:text-white">
+    <div className="flex flex-col  items-center p-4 bg-white text-center">
+        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-primary bg-opacity-[15%] text-4xl text-primary transition-colors duration-300 hover:bg-primary hover:text-white">
             <Icon />
         </div>
         <h3 className="font-semibold mt-2">{name}</h3>
@@ -24,16 +26,20 @@ const CategoryCard = ({ name, Icon, courses }) => (
 );
 
 export default function Categories() {
+    const [windowWidth, setWindownWidth] = useState(0)
+
+    useEffect(() => {
+        setWindownWidth(window.innerWidth)
+    }, [])
     return (
-        <section className="container mx-auto py-10 bg-gray-50">
-            <div className="text-center mb-8">
-                <p className="text-green-500 uppercase">Explore Categories</p>
-                <h2 className="text-3xl font-bold">Top Categories</h2>
-            </div>
-            <div className="flex flex-wrap justify-center gap-6">
-                {categories.map((category, index) => (
-                    <CategoryCard key={index} name={category.name} Icon={category.icon} courses={category.courses} />
-                ))}
+        <section className="container mx-auto py-16 bg-white">
+            {<Heading sub={'Explore Categories'} main={'Top Categories'} align={'center'} />}
+            <div className="grid px-0 xl:px-20 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-center">
+                {
+                    (windowWidth >= 1280 ? categories.slice(0, 10) : windowWidth >= 1024 ? categories.slice(0, 8) : windowWidth >= 768 ? categories.slice(0, 6) : categories.slice(0, 4)).map((category, index) => (
+                        <CategoryCard key={index} name={category.name} Icon={category.icon} courses={category.courses} />
+                    ))
+                }
             </div>
         </section>
     );

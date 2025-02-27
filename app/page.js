@@ -12,6 +12,8 @@ import Hero from "@/container/Hero";
 import Overview from "@/container/Overview";
 import TopCategorys from "@/container/TopCategory";
 import Categories from "@/container/TopCategory";
+import AboutUs from "@/container/About";
+import Courses from "@/container/ForUCourse";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,7 +40,7 @@ export default function Home() {
       {/* Navbar */}
       <nav className={`shadow-sm px-4 bg-white p-2 flex justify-between sticky top-0 items-center fixed top-0 w-full transition-all ${isScrolled ? "shadow-lg p-3" : "p-2"} z-[100]`}>
         <div className="text-xl font-bold">
-          <Image src={logo} width={50} height={50} />
+          <Image src={logo} width={50} height={50} alt="Ekkhuny Somoy Logo" />
         </div>
         <div className="hidden font-bold md:flex space-x-6">
           <a href="#" className="hover:underline">Home</a>
@@ -73,6 +75,10 @@ export default function Home() {
       <Overview />
       {/* top category section */}
       <Categories />
+      {/* About us Section */}
+      <AboutUs />
+      {/* course section */}
+      <Courses />
     </div>
   );
 }
