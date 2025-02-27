@@ -33,7 +33,7 @@ export default function Hero() {
         <section className="text-center p-10 md:p-20 flex flex-col md:flex-row items-center justify-between mt-10">
             <div className="md:w-1/2">
                 <h1 className="text-3xl md:text-5xl text-left font-bold">
-                    Discover the Top <span className="text-[#3872BF]">Courses</span> to Enhance Your Skills
+                    Discover the Top <span className="text-primary">Courses</span> to Enhance Your Skills
                 </h1>
                 <p className="text-gray-600 mb-7 text-left mt-4 max-w-lg">
                     Universal is dedicated to offering educational experiences designed to align with new and evolving career paths.
@@ -42,7 +42,7 @@ export default function Hero() {
                 <section className="flex flex-wrap justify-center gap-6 mt-10">
 
                     {heroDetails.map((item, i) => {
-                        return <div key={i} className={`bg-[${item.bgcolor}] bg-opacity-[20%] p-3 rounded flex justify-between text-center`}>
+                        return <div key={i} className={`bg-[${item.bgcolor}] bg-opacity-[20%] p-2 rounded flex justify-between text-center`}>
                             <div className="items-center flex">
                                 {item.icon}
                             </div>
