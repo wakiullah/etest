@@ -1,5 +1,6 @@
 import Image from "next/image";
 import course1img from '@/public/assests/course1.png'
+import Heading from "@/components/UI/Heading";
 const courses = [
     {
         id: 1,
@@ -51,10 +52,10 @@ const CourseCard = ({ course }) => {
                     {course.badge}
                 </span>
             )}
-            <Image src={course.image} alt={course.title} className="object-cover w-full rounded-t-lg h-56 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" />
+            <Image src={course.image} alt={course.title} className="object-cover w-full rounded-t-lg h-56 md:h-auto md:w-60 md:rounded-none md:rounded-s-lg" />
             <div className="mt-4 pl-7" >
-                <h3 className="text-lg font-semibold">{course.title}</h3>
-                <p className="text-gray-600 text-sm">{course.description}</p>
+                <h3 className="text-2xl font-semibold">{course.title}</h3>
+                <p className="text-gray-600 text-lg leading-[1.3]">{course.description}</p>
                 <div className="mt-2 flex items-center">
                     <span className="text-yellow-500 text-sm">⭐⭐⭐⭐⭐</span>
                     <span className="ml-1 text-gray-500 text-sm">{course.rating} ({course.ratingsCount} Ratings)</span>
@@ -72,19 +73,20 @@ const CourseCard = ({ course }) => {
 
 export default function Courses() {
     return (
-        <div className="p-6 bg-white">
+        <div className="p-6 bg-white pt-24">
             <div className="container mx-auto">
-                <h2 className="text-2xl font-bold text-center mb-6">Discover Your Next Course</h2>
+                <div className="px-3 flex justify-between">
+                    <Heading sub={'Top Picks for You'} main={'Discover Your Next Course'} align={'left'} />
+                    <div>
+                        <button className="border-[1px] hover:border-[1px] border-primary px-5 bg-primary hover:bg-white hover:text-primary block text-white py-[6px]  rounded">View More</button>
+                    </div>
+                </div>
                 <div className="grid grid-cols-2 gap-4 j">
                     {courses.map((course) => (
                         <CourseCard key={course.id} course={course} />
                     ))}
                 </div>
-                <div className="flex justify-center mt-6">
-                    <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">
-                        View More
-                    </button>
-                </div>
+
             </div>
         </div>
     );
