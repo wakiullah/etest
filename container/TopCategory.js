@@ -17,7 +17,7 @@ const categories = [
 
 const CategoryCard = ({ name, Icon, courses }) => (
     <div className="flex flex-col  items-center p-4 bg-white text-center">
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-primary bg-opacity-[15%] text-4xl text-primary transition-colors duration-300 hover:bg-primary hover:text-white">
+        <div className="w-20 h-20 flex items-center justify-center rounded-full bg-primary bg-opacity-[15%] text-4xl text-primary transition-colors duration-300 hover:bg-primary hover:text-white">
             <Icon />
         </div>
         <h3 className="font-semibold mt-2">{name}</h3>

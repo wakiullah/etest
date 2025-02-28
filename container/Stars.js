@@ -9,7 +9,7 @@ const stats = [
 export default function Stars() {
     return (
 
-        < section className="bg-primary text-white py-12 text-center" >
+        < section className="bg-primary text-white py-16 text-center" >
             <div className='container mx-auto'>
                 <div className=" mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stats.map((stat, index) => (

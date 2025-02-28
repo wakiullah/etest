@@ -73,7 +73,7 @@ const CourseCard = ({ course }) => {
 
 export default function Courses() {
     return (
-        <div className="p-6 bg-white pt-24">
+        <div className="p-6 bg-white py-24">
             <div className="container mx-auto">
                 <div className="px-3 flex justify-between">
                     <Heading sub={'Top Picks for You'} main={'Discover Your Next Course'} align={'left'} />

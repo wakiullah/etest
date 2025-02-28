@@ -17,6 +17,8 @@ import Courses from "@/container/ForUCourse";
 import Stars from "@/container/Stars";
 import Offerings from "@/container/Offerings";
 import FAQ from "@/container/Faqs";
+import LatestUpdates from "@/container/LatestUpdares";
+import Sponsors from "@/container/Sponsors";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -88,6 +90,8 @@ export default function Home() {
       <Offerings />
       {/* Faqs section */}
       <FAQ />
+      <LatestUpdates />
+      <Sponsors />
     </div>
   );
 }
