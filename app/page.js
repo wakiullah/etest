@@ -19,6 +19,7 @@ import Offerings from "@/container/Offerings";
 import FAQ from "@/container/Faqs";
 import LatestUpdates from "@/container/LatestUpdares";
 import Sponsors from "@/container/Sponsors";
+import Footer from "@/components/UI/Footer";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -92,6 +93,7 @@ export default function Home() {
       <FAQ />
       <LatestUpdates />
       <Sponsors />
+      <Footer />
     </div>
   );
 }
