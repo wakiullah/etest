@@ -48,7 +48,7 @@ const CourseCard = ({ course }) => {
     return (
         <div className="bg-white lg:flex rounded-lg shadow-md p-4 ">
             {course.badge && (
-                <span className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-md absolute m-2">
+                <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded-md absolute m-2">
                     {course.badge}
                 </span>
             )}
@@ -81,7 +81,7 @@ export default function Courses() {
                         <button className="border-[1px] hover:border-[1px] border-primary px-5 bg-primary hover:bg-white hover:text-primary block text-white py-[6px]  rounded">View More</button>
                     </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4 j">
+                <div className="grid grid-cols-2 gap-4">
                     {courses.map((course) => (
                         <CourseCard key={course.id} course={course} />
                     ))}

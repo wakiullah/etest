@@ -14,6 +14,9 @@ import TopCategorys from "@/container/TopCategory";
 import Categories from "@/container/TopCategory";
 import AboutUs from "@/container/About";
 import Courses from "@/container/ForUCourse";
+import Stars from "@/container/Stars";
+import Offerings from "@/container/Offerings";
+import FAQ from "@/container/Faqs";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,6 +82,12 @@ export default function Home() {
       <AboutUs />
       {/* course section */}
       <Courses />
+      {/* stars section       */}
+      <Stars />
+      {/* offerings section  */}
+      <Offerings />
+      {/* Faqs section */}
+      <FAQ />
     </div>
   );
 }
