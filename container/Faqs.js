@@ -31,7 +31,7 @@ export default function FAQ() {
     };
 
     return (
-        <div className="container mx-auto lg:grid lg:gap-10 lg:grid-cols-2 py-6">
+        <div className="container mx-auto p-6 lg:grid lg:gap-10 lg:grid-cols-2 py-6">
             <div className="hidden lg:block px-5">
                 <Image src={faqimg} alt="Frequently Asked Questions w-2/3" />
             </div>

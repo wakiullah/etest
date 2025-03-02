@@ -24,7 +24,7 @@ const articles = [
 
 export default function LatestUpdates() {
     return (
-        <section className="py-12 container mx-auto">
+        <section className="py-12 p-6    container mx-auto">
             <div className="max-w-6xl mx-auto text-center">
                 <h3 className="text-green-600 uppercase text-sm font-semibold">News & Insights</h3>
                 <h2 className="text-3xl font-bold text-gray-800 my-2">Latest Updates</h2>

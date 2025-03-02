@@ -49,7 +49,7 @@ export default function AboutUs() {
                     />
                 </div>
                 {/* Right Side - Content */}
-                <div className="w-full md:w-3/5 space-y-4 pl-20">
+                <div className="w-full md:w-3/5 space-y-4 md:pl-20">
                     {<Heading sub={'ABOUT US'} main={`We're Focuses Technology and Innovative Learning`} align={'left'} />}
                     <p className="text-gray-600">
                         {aboutData.mission}

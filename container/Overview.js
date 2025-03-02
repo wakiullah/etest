@@ -14,7 +14,7 @@ export default function Overview() {
 
     return (
         <div className='bg-primary '>
-            <div className='p-6 flex '>
+            <div className='p-6 hidden md:flex '>
                 {data.map((item, i) => {
                     return <OverViewItem icon={item.icon} key={i} text={item.title} />
                 })}

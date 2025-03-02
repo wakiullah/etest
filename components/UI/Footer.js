@@ -11,9 +11,9 @@ export default function Footer() {
                     {/* Logo & Description */}
                     <div>
                         <h2 className="text-2xl font-bold flex items-center gap-2">
-                            <span className="bg-green-500 text-black p-2 rounded-full">📚</span> iStudy
+                            ESOMOY
                         </h2>
-                        <p className="text-gray-400 mt-4">
+                        <p className="text-white mt-4">
                             Education focused website or template is an essential part that provides visitors with insights into the
                             program or service offered.
                         </p>
@@ -27,7 +27,7 @@ export default function Footer() {
                     {/* Links */}
                     <div>
                         <h3 className="text-lg font-semibold">Links</h3>
-                        <ul className="mt-4 space-y-2 text-gray-400">
+                        <ul className="mt-4 space-y-2 text-white">
                             <li><a href="#" className="hover:text-white">About Us</a></li>
                             <li><a href="#" className="hover:text-white">Courses</a></li>
                             <li><a href="#" className="hover:text-white">Instructor</a></li>
@@ -38,7 +38,7 @@ export default function Footer() {
                     {/* Support */}
                     <div>
                         <h3 className="text-lg font-semibold">Support</h3>
-                        <ul className="mt-4 space-y-2 text-gray-400">
+                        <ul className="mt-4 space-y-2 text-white">
                             <li><a href="#" className="hover:text-white">Contact Now</a></li>
                             <li><a href="#" className="hover:text-white">FAQ</a></li>
                             <li><a href="#" className="hover:text-white">Purchase Guide</a></li>
@@ -49,7 +49,7 @@ export default function Footer() {
                     {/* Newsletter */}
                     <div>
                         <h3 className="text-lg font-semibold">Newsletter</h3>
-                        <p className="text-gray-400 mt-4">Subscribe our newsletter to get the latest news & updates.</p>
+                        <p className="text-white mt-4">Subscribe our newsletter to get the latest news & updates.</p>
                         <div className="mt-4 flex items-center border border-gray-600 rounded-lg overflow-hidden">
                             <input
                                 type="email"
@@ -60,12 +60,12 @@ export default function Footer() {
                         </div>
                         <div className="mt-4 flex items-center">
                             <input type="checkbox" className="mr-2" />
-                            <span className="text-gray-400">I Have Read And Agree To The Website.</span>
+                            <span className="text-white">I Have Read And Agree To The Website.</span>
                         </div>
                     </div>
                 </div>
-                <div className="text-center bg-primary brightness-[100%] mt-10 border-t border-gray-700 pt-4">
-                    <p className="text-gray-400">© Copyright 2025 | Developed By iStudy</p>
+                <div className="text-center  mt-10 border-t border-gray-200 pt-4">
+                    <p className="text-white">© Copyright 2025 | Developed By iStudy</p>
                 </div>
             </div>
         </footer>

@@ -22,17 +22,19 @@ const offerings = [
 
 export default function Offerings() {
     return (
-        <div className=" py-16 bg-white text-center">
+        <div className=" py-16 p-6 bg-white text-center">
             <div className='container mx-auto'>
-                <Heading sub={"Why Ekkhuny Somoy?"} main={'Explore Our Unique Offerings'} align={'center'} />
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6  mx-auto">
-                    {offerings.map((offer, index) => (
-                        <div key={index} className="bg-gray-100 p-6 py-10 rounded-lg  flex flex-col items-center text-center">
-                            {offer.icon}
-                            <h3 className="mt-4 text-xl font-bold text-gray-800">{offer.title}</h3>
-                            <p className="text-gray-600 mt-2 text-lg">{offer.description}</p>
-                        </div>
-                    ))}
+                <div className='container mx-auto'>
+                    <Heading sub={"Why Ekkhuny Somoy?"} main={'Explore Our Unique Offerings'} align={'center'} />
+                    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6  mx-auto">
+                        {offerings.map((offer, index) => (
+                            <div key={index} className="bg-gray-100 p-6 py-10 rounded-lg  flex flex-col items-center text-center">
+                                {offer.icon}
+                                <h3 className="mt-4 text-xl font-bold text-gray-800">{offer.title}</h3>
+                                <p className="text-gray-600 mt-2 text-lg">{offer.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
