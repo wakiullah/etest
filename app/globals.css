@@ -18,8 +18,7 @@
   --color-primary: #3872BF;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+p,
+span {
+  font-family: Lato, Jost;
 }

@@ -30,7 +30,7 @@ const heroDetails = [
 
 export default function Hero() {
     return (
-        <section className="text-center p-10 md:p-20 flex flex-col md:flex-row items-center justify-between mt-10">
+        <section className="text-center p-10 md:p-20 flex flex-col md:flex-row items-center justify-between mt-5">
             <div className="md:w-1/2">
                 <h1 className="text-3xl md:text-5xl text-left font-bold">
                     Discover the Top <span className="text-primary">Courses</span> to Enhance Your Skills
