@@ -4,6 +4,7 @@ import Heading from './UI/Heading';
 import Link from 'next/link';
 import Image from 'next/image';
 
+// this is a TeamCard Function
 export default function TeamCard({ member }) {
     return (
         <div className="group bg-white rounded border hover:border-primary transition duration-300 ease-in-out p-6 flex flex-col sm:flex-row  sm:text-left w-full max-w-2xl">
