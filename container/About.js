@@ -38,7 +38,6 @@ export default function AboutUs() {
     return (
         <section className=" p-10 bg-gray-50">
             <div className='container mx-auto flex  flex-col md:flex-row items-center justify-between'>
-                {/* Left Side - Image */}
                 <div className=" md:w-2/5 w-full">
                     <Image
                         src={aboutIcon}
