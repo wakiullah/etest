@@ -2,7 +2,6 @@ import React from 'react'
 import { FaStar, FaUsers, FaBook, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaBehance } from 'react-icons/fa';
 
 export default function Instructor() {
-    //single instructor
     return (
         <div className="bg-gray-100 p-4 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4">Instructors</h2>
