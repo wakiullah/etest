@@ -1,5 +1,5 @@
 'use client';
-
+// curriculam section
 import { curriculumData } from '@/data/CourseDetails';
 import { useState } from 'react';
 import { FaLock, FaCheckCircle } from 'react-icons/fa';
