@@ -13,7 +13,7 @@ export const courses = [
         lessons: 25,
         students: 200,
         badge: "10% Off",
-        image: course1img, // Replace with actual path
+        image: course1img, 
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ export const courses = [
         lessons: 15,
         students: 350,
         badge: "Top",
-        image: course1img, // Replace with actual path
+        image: course1img, 
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ export const courses = [
         lessons: 15,
         students: 350,
         badge: "Top",
-        image: course1img, // Replace with actual path
+        image: course1img,
     },
 ];
 
