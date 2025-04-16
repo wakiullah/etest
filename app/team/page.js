@@ -1,10 +1,21 @@
-'use client'
+import { db } from "@/firebase/firebase";
+import { ref, get } from "firebase/database";
 import TeamCard from '@/components/TeamCard';
 import Heading from '@/components/UI/Heading';
 import { TeamMembers } from '@/data/Team';
 
 
-export default function TeamList() {
+export default async function TeamList() {
+    try {
+        const headerRef = ref(db, 'data'); // Get ref of 'data'
+        const snapshot = await get(headerRef); // Get data of 'data'
+        const data = await snapshot.val()
+        console.log(data);
+        
+    } catch (error) {
+        console.error('Error getting data:', error);
+        throw error;
+    }
     return (
         <section className="min-h-screen bg-white  py-10 px-4">
             <div className='container mx-auto'>

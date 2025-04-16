@@ -1,3 +1,4 @@
+'use client'
 import Heading from "@/components/UI/Heading";
 import Image from "next/image";
 import { useRef, useState } from "react";

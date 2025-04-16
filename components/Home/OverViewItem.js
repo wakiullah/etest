@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-
 export default function OverViewItem({ icon, text }) {
     return (
         <div  className='group w-full flex justify-center w-full items-center py-10 gap-6'>

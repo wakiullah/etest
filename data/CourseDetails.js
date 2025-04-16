@@ -6,20 +6,20 @@ import { GiLevelFour } from "react-icons/gi";
 
 export const courseData = {
     title: "Complete Guide to Web Development: Beginner to Advanced",
-    reviews: "⭐⭐⭐⭐☆ (1,230 reviews)",
-    creator: "John Doe",
-    totalEnrolled: "12,580",
-    lastUpdate: "15 September 2024",
+    reviews: "⭐⭐⭐⭐☆ ",
+    creator: "MD Wakiullah",
+    totalEnrolled: "500+",
+    lastUpdate: "10 April, 2025",
     category: "Web Development",
-    description: "This comprehensive course covers all aspects of web development from the basics of HTML, CSS, and JavaScript to advanced topics like React, Node.js, and database integration. Whether you're a complete beginner or an experienced developer looking to hone your skills, this course has everything you need to master web development. Learn best practices and gain hands-on experience with real-world projects.",
+    description: "This comprehensive course covers all aspects of web development from the basics of HTML, CSS, and JavaScript . Whether you're a complete beginner or an experienced developer looking to hone your skills, this course has everything you need to master web development. Learn best practices and gain hands-on experience with real-world projects.",
     price: "$Free",
-    oldPrice: "$1200",
+    oldPrice: "৳1200",
     details: [
-        { label: "Level", value: "Beginners", icon: <GiLevelFour /> },
-        { label: "Lectures", value: "8 Lectures", icon: <MdOutlineVideoLibrary /> },
-        { label: "Duration", value: "1h 30m 12s", icon: <MdOutlineAccessTime /> },
+        { label: "Level", value: "Beginners", icon: "GiLevelFour" },
+        { label: "Lectures", value: "12 Lectures", icon: <MdOutlineVideoLibrary /> },
+        { label: "Duration", value: "10Hours+", icon: <MdOutlineAccessTime /> },
         { label: "Category", value: "Web Development", icon: <MdOutlineCategory /> },
-        { label: "Language", value: "English", icon: <MdLanguage /> },
+        { label: "Language", value: "Bangla", icon: <MdLanguage /> },
         { label: "Resources", value: "5 Downloadable Files", icon: <MdOutlineFileDownload /> },
         { label: "Certificate", value: "Yes", icon: <MdOutlineVerified /> }
     ],
@@ -39,15 +39,15 @@ export const curriculumData = [
     {
         "title": "Introduction to Web Development",
         "lessons": [
-            { "title": "Overview of HTML, CSS, and JavaScript", "duration": "08:45", "locked": true },
-            { "title": "Setting up your development environment", "duration": "10:22", "locked": true }
+            { "title": "Overview of HTML, CSS, and JavaScript", "duration": "08:45", "link": "https://www.facebook.com/mwakiullah/videos/1107800857262839?idorvanity=581749051228732", "locked": true },
+            { "title": "Setting up your development environment", "duration": "10:22", "locked": true, "link": "https://www.facebook.com/mwakiullah/videos/1107800857262839?idorvanity=581749051228732" },
         ]
     },
     {
         "title": "HTML Fundamentals",
         "lessons": [
-            { "title": "Understanding HTML structure", "duration": "12:30", "locked": true },
-            { "title": "Common HTML tags and attributes", "duration": "09:15", "locked": true }
+            { "title": "Understanding HTML structure", "duration": "12:30", "locked": true, "link": "https://www.facebook.com/mwakiullah/videos/1107800857262839?idorvanity=581749051228732" },
+            { "title": "Common HTML tags and attributes", "duration": "09:15", "locked": true, "link": "https://www.facebook.com/mwakiullah/videos/1107800857262839?idorvanity=581749051228732" },
         ]
     },
     {

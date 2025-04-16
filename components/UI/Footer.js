@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
 
@@ -18,7 +19,7 @@ export default function Footer() {
                             program or service offered.
                         </p>
                         <div className="flex gap-4 mt-4">
-                            <a href="#" className="p-2 border rounded-sm hover:bg-white hover:text-primary"><FaFacebookF /></a>
+                            <a href="https://www.facebook.com/profile.php?id=61569850573190" target='_blank' className="p-2 border rounded-sm hover:bg-white hover:text-primary"><FaFacebookF /></a>
                             <a href="#" className="p-2 border  rounded-sm hover:bg-white hover:text-primary"><RxCross2 /></a>
                             <a href="#" className="p-2 border rounded-sm hover:bg-white hover:text-primary"><FaLinkedinIn /></a>
                             <a href="#" className="p-2 border rounded-sm hover:bg-white hover:text-primary"><FaInstagram /></a>
@@ -29,8 +30,8 @@ export default function Footer() {
                         <h3 className="text-lg font-semibold">Links</h3>
                         <ul className="mt-4 space-y-2 text-white">
                             <li><a href="#" className="hover:text-white">About Us</a></li>
-                            <li><a href="#" className="hover:text-white">Courses</a></li>
-                            <li><a href="#" className="hover:text-white">Instructor</a></li>
+                            <li><Link href="/courses" className="hover:text-white">Courses</Link></li>
+                            <li><Link href="/team" className="hover:text-white">Instructor</Link></li>
                             <li><a href="#" className="hover:text-white">Instructor Details</a></li>
                             <li><a href="#" className="hover:text-white">Event</a></li>
                         </ul>
@@ -39,7 +40,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-lg font-semibold">Support</h3>
                         <ul className="mt-4 space-y-2 text-white">
-                            <li><a href="#" className="hover:text-white">Contact Now</a></li>
+                            <li><Link href="/hireus" className="hover:text-white">Contact Now</Link></li>
                             <li><a href="#" className="hover:text-white">FAQ</a></li>
                             <li><a href="#" className="hover:text-white">Purchase Guide</a></li>
                             <li><a href="#" className="hover:text-white">Terms Conditions</a></li>
@@ -65,7 +66,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="text-center  mt-10 border-t border-gray-200 pt-4">
-                    <p className="text-white">© Copyright 2025 | Developed By iStudy</p>
+                    <p className="text-white">© Copyright E-somoy 2025 | Developed By <a className="hover:underline text-green-200"href='https://github.com/wakiullah' target="_blank">Md Wakiullah</a></p>
                 </div>
             </div>
         </footer>

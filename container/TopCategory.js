@@ -1,3 +1,4 @@
+'use client'
 import Heading from "@/components/UI/Heading";
 import { useEffect, useState } from "react";
 import { FaPalette, FaCameraRetro, FaBullhorn, FaHeartbeat, FaRobot, FaLaptopCode, FaChartLine, FaDatabase, FaMusic, FaBrain } from "react-icons/fa";
