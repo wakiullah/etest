@@ -28,14 +28,11 @@ export default async function ForUCourse() {
                         </Link>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div className="grid my-16 md:grid-cols-2 gap-4">
                     {courses.map((course) => (
                         <CourseCard key={course.id} course={course} />
                     ))}
                 </div>
-=======
->>>>>>> da2f3eac7e8cde4b6e34023cdb3378bf4b362c2d
             </div>
         </div>
     );
