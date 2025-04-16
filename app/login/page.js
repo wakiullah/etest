@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 
 import { auth } from "@/firebase/firebase"; import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { redirect } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { toast } from "react-toastify";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -12,6 +13,11 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+
+
+    const notify = () => toast.success("Login Successful!", {
+        position: "top-center",
+    })
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -21,6 +27,7 @@ export default function LoginPage() {
             // Log in the user with email and password
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             console.log('User logged in:');
+            notify()
             router.push('/')
         } catch (err) {
             console.error('Error logging in:', err.message);
@@ -38,6 +45,8 @@ export default function LoginPage() {
             const result = await signInWithPopup(auth, provider);
             console.log('Google login successful:', result.user);
             router.push('/'); // Redirect to home page
+            notify()
+
         } catch (err) {
             console.error('Error with Google login:', err.message);
             setError(err.message);

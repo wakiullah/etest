@@ -4,6 +4,7 @@ import UpperNav from "@/container/upperNav";
 import Navbar from "@/components/UI/Navbar";
 import Footer from "@/components/UI/Footer";
 import Sponsors from "@/container/Sponsors";
+import { Bounce, ToastContainer } from 'react-toastify';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,19 @@ export default function RootLayout({ children }) {
       <body
         className={`bg-white text-gray-900`}
       >
+        <ToastContainer
+          position="top-center"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
         <UpperNav />
         <Navbar />
         {children}

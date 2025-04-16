@@ -3,9 +3,14 @@ import { useState, useEffect } from 'react';
 import { FaLock, FaCheckCircle } from 'react-icons/fa';
 import { IoIosArrowDown } from "react-icons/io";
 import { getAuth, onAuthStateChanged } from "firebase/auth"; // Import Firebase Auth
+import { toast } from "react-toastify";
 
 const CurriculumSection = ({ section, isLoggedIn }) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const notify = () => toast.warning("Please login to see the Video", {
+        position: "top-center",
+    })
 
     return (
         <div className="border-b">
@@ -27,7 +32,7 @@ const CurriculumSection = ({ section, isLoggedIn }) => {
                                     <FaCheckCircle className="text-green-500" />
                                 )}
                                 {(!isLoggedIn && index > 0) ? (
-                                    <span className="text-gray-500">{lesson.title}</span>
+                                    <span onClick={notify} className="text-gray-500">{lesson.title}</span>
                                 ) : (
                                     <a
                                         href={lesson.link}
