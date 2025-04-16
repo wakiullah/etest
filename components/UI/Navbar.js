@@ -61,24 +61,25 @@ export default function Navbar() {
                     <Link href="/" className="hover:underline">Home</Link>
                     <Link href="/blog" className="hover:underline">Blog</Link>
                     <Link href="/courses" className="hover:underline">Courses</Link>
+                    <Link href="/einfo" className="hover:underline">E-Info</Link>
                     <Link href="/hireus" className="hover:underline">Hire Us</Link>
                 </div>
                 <div className="hidden md:flex items-center space-x-4">
                     {user ? (
                         <><Link href="/profile">
-                                <img
-                                    src={getGravatarUrl(user.email)}
-                                    alt="Profile"
-                                    className="w-8 h-8 rounded-full cursor-pointer"
-                                />
-                            </Link>
+                            <img
+                                src={getGravatarUrl(user.email)}
+                                alt="Profile"
+                                className="w-8 h-8 rounded-full cursor-pointer"
+                            />
+                        </Link>
                             <button
                                 onClick={handleLogout}
                                 className="border-[1px] border-primary px-5 hover:bg-primary hover:text-white text-primary py-[6px] rounded"
                             >
                                 Logout
                             </button>
-                            
+
                         </>
                     ) : (
                         <>
@@ -133,11 +134,18 @@ export default function Navbar() {
                         Blog
                     </Link>
                     <Link
-                        href="/dashboard"
+                        href="/einfo"
                         className="text-lg font-medium text-gray-800 hover:text-primary transition"
                         onClick={() => setMenuOpen(false)}
                     >
-                        Dashboard
+                        E-Info
+                    </Link>
+                    <Link
+                        href="/hireus"
+                        className="text-lg font-medium text-gray-800 hover:text-primary transition"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        Hire Us
                     </Link>
                     <div className="mt-auto w-full">
                         {user ? (

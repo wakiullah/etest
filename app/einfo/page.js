@@ -1,44 +1,21 @@
 'use client';
-
+import { cityData, universityData } from "@/data/einfo";
+import { Hind_Siliguri } from "next/font/google";
 import { useState } from "react";
+import { toast } from "react-toastify";
+
+const hindsiliguri = Hind_Siliguri({
+    weight: ['400', '500', '600', '700'],
+    subsets: ['latin'],
+    variable: '--font-hindsiliguri',
+    display: 'swap',
+})
 
 export default function ImportantInfoPage() {
     const [showPopup, setShowPopup] = useState(false);
     const [popupData, setPopupData] = useState(null);
 
-    const universityData = [
-        {
-            category: "প্রক্টরের নাম্বার সমূহ",
-            items: [
-                { name: "প্রক্টর ১", phone: "+880123456789", email: "proctor1@cu.ac.bd" },
-                { name: "প্রক্টর ২", phone: "+880987654321", email: "proctor2@cu.ac.bd" },
-                { name: "প্রক্টর ৩", phone: "+880112233445", email: "proctor3@cu.ac.bd" },
-            ],
-        },
-        {
-            category: "হলের প্রভোষ্ট",
-            items: [
-                { name: "প্রভোষ্ট ১", phone: "+880223344556", email: "provost1@cu.ac.bd" },
-                { name: "প্রভোষ্ঠ ২", phone: "+880334455667", email: "provost2@cu.ac.bd" },
-            ],
-        },
-    ];
-
-    const cityData = [
-        {
-            category: "থানা",
-            items: [
-                { name: "কোতোয়ালি থানা", phone: "+880312345678", email: "kotwali@police.gov.bd" },
-                { name: "পাঁচলাইশ থানা", phone: "+880312345679", email: "panchlaish@police.gov.bd" },
-            ],
-        },
-        {
-            category: "ফায়ার সার্ভিস",
-            items: [
-                { name: "চট্টগ্রাম ফায়ার সার্ভিস", phone: "199", email: "fireservice@chittagong.gov.bd" },
-            ],
-        },
-    ];
+    
 
     const handlePopup = (data) => {
         setPopupData(data);
@@ -50,8 +27,18 @@ export default function ImportantInfoPage() {
         setPopupData(null);
     };
 
+    const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text);
+        toast.success("Copied to clipboard!", {
+            position: "top-center",
+        });
+        const notify = () => toast.success("Login Successful!", {
+            position: "top-center",
+        })
+    };
+
     return (
-        <div className="min-h-screen bg-gray-50 py-10">
+        <div className={`${hindsiliguri.variable} min-h-screen hind-font bg-gray-50 py-10`}>
             <div className="container mx-auto px-4">
                 <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
                     গুরুত্বপূর্ণ তথ্য
@@ -66,10 +53,10 @@ export default function ImportantInfoPage() {
                         {universityData.map((data, index) => (
                             <div
                                 key={index}
-                                className="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                                className="bg-white  hover:bg-gray-100 border border-primary shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
                                 onClick={() => handlePopup(data)}
                             >
-                                <h3 className="text-xl font-bold text-gray-800">{data.category}</h3>
+                                <h3 className="text-xl font-semibold text-gray-800">{data.category}</h3>
                             </div>
                         ))}
                     </div>
@@ -84,10 +71,10 @@ export default function ImportantInfoPage() {
                         {cityData.map((data, index) => (
                             <div
                                 key={index}
-                                className="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                                className="bg-white  border border-primary hover:bg-gray-100 shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
                                 onClick={() => handlePopup(data)}
                             >
-                                <h3 className="text-xl font-bold text-gray-800">{data.category}</h3>
+                                <h3 className="text-xl font-semibold text-gray-800">{data.category}</h3>
                             </div>
                         ))}
                     </div>
@@ -96,8 +83,8 @@ export default function ImportantInfoPage() {
 
             {/* Popup */}
             {showPopup && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 p-6 relative">
+                <div className={`${hindsiliguri.variable} fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100]`}>
+                    <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 p-6 relative max-h-[80vh] overflow-y-auto">
                         <button
                             className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"
                             onClick={closePopup}
@@ -116,16 +103,22 @@ export default function ImportantInfoPage() {
                                     </summary>
                                     <div className="mt-2 text-gray-600">
                                         <p>
-                                            <span className="font-semibold">ফোন:</span> {item.phone}
+                                            <span className="font-semibold">ফোন:</span>{" "}
+                                            <span
+                                                className="text-blue-500 hover:underline cursor-pointer"
+                                                onClick={() => copyToClipboard(item.phone)}
+                                            >
+                                                {item.phone}
+                                            </span>
                                         </p>
                                         <p>
                                             <span className="font-semibold">ইমেইল:</span>{" "}
-                                            <a
-                                                href={`mailto:${item.email}`}
-                                                className="text-blue-500 hover:underline"
+                                            <span
+                                                className="text-blue-500 hover:underline cursor-pointer"
+                                                onClick={() => copyToClipboard(item.email)}
                                             >
                                                 {item.email}
-                                            </a>
+                                            </span>
                                         </p>
                                     </div>
                                 </details>

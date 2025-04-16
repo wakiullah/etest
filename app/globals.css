@@ -22,3 +22,7 @@ p,
 span {
   font-family: Lato, Jost;
 }
+
+.hind-font {
+  font-family: var(--font-hindsiliguri)
+}

@@ -33,7 +33,7 @@ export default function Hero() {
         <section className="text-center p-10 md:p-20 flex flex-col md:flex-row items-center justify-between mt-5">
             <div className="md:w-1/2">
                 <h1 className="text-3xl md:text-5xl text-left font-bold">
-                    Take Your Skills to the <span className="text-primary font-bold">Next Level</span> with These Top Courses
+                    Take Your Skills to the <span className="text-primary font-bold">Next Level</span> with Top Courses
                 </h1>
                 <p className="text-gray-600 mb-7 text-left mt-4 max-w-lg">
                     Universal is dedicated to offering educational experiences designed to align with new and evolving career paths.

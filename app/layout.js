@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Lato } from "next/font/google";
+import { Geist, Geist_Mono, Lato, Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import UpperNav from "@/container/upperNav";
 import Navbar from "@/components/UI/Navbar";
@@ -25,6 +25,7 @@ const lato = Lato({
   subsets: ['latin'],
   display: 'swap',
 })
+
 
 export default function RootLayout({ children }) {
   return (

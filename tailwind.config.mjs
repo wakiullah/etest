@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        hind: ['var(--font-hindsiliguri)', 'sans-serif'], // Use the CSS variable
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
