@@ -5,6 +5,7 @@ const useWindowSize = () => {
         height: undefined
     });
 
+    
     useEffect(() => {
         if (typeof window !== "undefined") {
             function handleResize() {
