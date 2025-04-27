@@ -1,9 +1,6 @@
 import { MdOutlineAccessTime, MdOutlineCategory, MdLanguage, MdOutlineFileDownload, MdOutlineVideoLibrary, MdOutlineVerified } from "react-icons/md";
 import { GiLevelFour } from "react-icons/gi";
 
-
-//single course
-
 export const courseData = {
     title: "Complete Guide to Web Development: Beginner to Advanced",
     reviews: "⭐⭐⭐⭐☆ ",
