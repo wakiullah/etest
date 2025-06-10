@@ -1,5 +1,6 @@
 import course1img from '@/public/assests/course1.png'
 
+
 export const courses = [
     {
         id: 1,
