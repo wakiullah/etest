@@ -15,7 +15,6 @@ export const courses = [
         students: 200,
         badge: "10% Off",
         image: course1img,
-        name:'wakiullah'
     },
     {
         id: 2,
