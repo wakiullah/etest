@@ -2,6 +2,7 @@ import React from 'react'
 import { FaStar } from 'react-icons/fa';
 
 export default function Review() {
+    
     return (
         <div className="bg-white shadow-md p-6 rounded-lg mt-6">
             <h2 className="text-2xl font-semibold mb-4">Student Feedback</h2>
