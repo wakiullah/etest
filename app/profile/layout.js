@@ -3,25 +3,24 @@
 import { useEffect, useState } from 'react';
 import { redirect, useRouter } from 'next/navigation';
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/firebase/firebase"; // Import Firebase auth
+import { auth } from "@/firebase/firebase"; 
 
 export default function ProfileLayout({ children }) {
-    const [loading, setLoading] = useState(true); // State to handle loading
-    const [user, setUser] = useState(null); // State to store user data
+    const [loading, setLoading] = useState(true); 
+    const [user, setUser] = useState(null); 
     const router = useRouter();
 
     useEffect(() => {
-        // Listen for authentication state changes
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (currentUser) {
-                setUser(currentUser); // User is logged in
+                setUser(currentUser); 
             } else {
                 redirect('/login')
             }
-            setLoading(false); // Stop loading once the state is updated
+            setLoading(false); 
         });
 
-        return () => unsubscribe(); // Cleanup the listener on unmount
+        return () => unsubscribe();
     }, [router]);
 
     if (loading) {
@@ -33,12 +32,12 @@ export default function ProfileLayout({ children }) {
     }
 
     if (!user) {
-        return null; // Prevent rendering if user is not logged in
+        return null
     }
 
     return (
         <div>
-            {children} {/* Render the profile page content */}
+            {children} 
         </div>
     );
 }

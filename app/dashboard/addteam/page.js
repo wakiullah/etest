@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { ref, push } from "firebase/database";
-import { db } from "@/firebase/firebase"; // Adjust the path based on your project structure
+import { db } from "@/firebase/firebase"; 
 
 const AddTeam = () => {
     const [formData, setFormData] = useState({
@@ -25,10 +25,8 @@ const AddTeam = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Reference to the "teamMembers" node in the database
         const teamMembersRef = ref(db, "teamMembers");
 
-        // Push the form data to the database
         push(teamMembersRef, formData)
             .then(() => {
                 console.log("Form Data Submitted Successfully:");

@@ -14,7 +14,7 @@ export default async function ForUCourse() {
         const data = snapshot.val();
         courses = Object.keys(data)
             .map((key) => ({ id: key, ...data[key] }))
-            .slice(0, 4); // Limit to 4 courses
+            .slice(0, 4); 
     }
 
     return (

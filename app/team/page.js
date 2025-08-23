@@ -7,8 +7,8 @@ import { TeamMembers } from '@/data/Team';
 
 export default async function TeamList() {
     try {
-        const headerRef = ref(db, 'data'); // Get ref of 'data'
-        const snapshot = await get(headerRef); // Get data of 'data'
+        const headerRef = ref(db, 'data'); 
+        const snapshot = await get(headerRef); 
         const data = await snapshot.val()
         console.log(data);
         

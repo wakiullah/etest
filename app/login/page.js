@@ -26,7 +26,6 @@ export default function LoginPage() {
         try {
             // Log in the user with email and password
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            console.log('User logged in:');
             notify()
             router.push('/')
         } catch (err) {

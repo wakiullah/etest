@@ -2,31 +2,29 @@
 import md5 from 'md5'; // Import md5 for hashing email
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/firebase/firebase"; // Import Firebase auth
+import { auth } from "@/firebase/firebase";
+import Image from 'next/image';
 
 
 export default function ProfilePage() {
-    const [user, setUser] = useState(null); // State to store user data
+    const [user, setUser] = useState(null); 
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Listen for authentication state changes
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (currentUser) {
-                // Extract user data
                 const { displayName, email, photoURL } = currentUser;
                 setUser({
-                    name: displayName || 'Anonymous User', // Fallback if displayName is null
+                    name: displayName || 'Anonymous User', 
                     email: email,
-                    image: photoURL || 'https://via.placeholder.com/150', // Fallback if photoURL is null
+                    image: photoURL || 'https://via.placeholder.com/150', 
                 });
             } else {
-                setUser(null); // No user is logged in
+                setUser(null); 
             }
-            setLoading(false); // Stop loading once the state is updated
-        });
+            setLoading(false); 
 
-        return () => unsubscribe(); // Cleanup the listener on unmount
+        return () => unsubscribe(); 
     }, []);
 
     const getGravatarUrl = (email) => {
@@ -54,10 +52,12 @@ export default function ProfilePage() {
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
             <h1 className="text-3xl font-bold mb-4">Welcome, {user.name}!</h1>
             <p className="text-gray-600 mb-4">Email: {user.email}</p>
-            <img
+            <Image
                 src={getGravatarUrl(user.email) || user.image}
                 alt={`${user.name}'s profile`}
                 className="rounded-full w-36 h-36 shadow-md"
+                width={144}
+                height={144}
             />
         </div>
     );

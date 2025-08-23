@@ -9,18 +9,18 @@ import Instructor from "@/components/UI/Instructor";
 import Review from "@/components/Review";
 import { ref, get } from "firebase/database";
 import { db } from "@/firebase/firebase";
+import Image from "next/image";
 
 
 export default async function CourseDetails({ params }) {
     const { courseid } = await params;
 
-    // Fetch course details from Firebase
     const coursesRef = ref(db, "courses");
     const snapshot = await get(coursesRef);
 
     let courseData = null;
 
- 
+
     if (snapshot.exists()) {
         const data = snapshot.val();
         courseData = Object.keys(data)
@@ -37,7 +37,6 @@ export default async function CourseDetails({ params }) {
     }
 
 
-    // Convert learningPoints from string to array
     let learningPoints = [];
     let curriculamData = []
     try {
@@ -85,16 +84,17 @@ export default async function CourseDetails({ params }) {
                     <Review />
                 </div>
             </div>
-
             {/* Right Section */}
             <div className="bg-white shadow-lg rounded-lg p-4">
                 <div className="sticky top-12">
                     <div className="relative w-full h-48 md:h-64 bg-gray-200 flex items-center justify-center rounded-md">
                         {courseData.imageUrl ? (
-                            <img
+                            <Image
                                 src={courseData.imageUrl}
                                 alt={courseData.title}
                                 className="w-full h-full object-cover rounded-md"
+                                width={500}
+                                height={500}
                             />
                         ) : (
                             <BsFillPlayCircleFill className="text-green-600 text-6xl cursor-pointer" />

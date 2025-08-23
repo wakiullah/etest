@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { FaLock, FaCheckCircle } from 'react-icons/fa';
 import { IoIosArrowDown } from "react-icons/io";
-import { getAuth, onAuthStateChanged } from "firebase/auth"; // Import Firebase Auth
+import { getAuth, onAuthStateChanged } from "firebase/auth"; 
 import { toast } from "react-toastify";
 
 const CurriculumSection = ({ section, isLoggedIn }) => {
@@ -59,10 +59,10 @@ export default function Curriculum({ curriculamData }) {
     useEffect(() => {
         const auth = getAuth();
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setIsLoggedIn(!!user); // Set logged-in state based on user presence
+            setIsLoggedIn(!!user); 
         });
 
-        return () => unsubscribe(); // Cleanup subscription on unmount
+        return () => unsubscribe(); 
     }, []);
 
     if (!curriculamData || curriculamData.length === 0) {

@@ -14,7 +14,6 @@ export default function Navbar() {
     const [user, setUser] = useState(null); // State to track the logged-in user
 
     useEffect(() => {
-        // Handle scroll effect
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 setIsScrolled(true);
@@ -29,23 +28,21 @@ export default function Navbar() {
     }, []);
 
     useEffect(() => {
-        // Listen for authentication state changes
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser); // Set the user if logged in, otherwise null
+            setUser(currentUser);
         });
-        return () => unsubscribe(); // Cleanup the listener on unmount
+        return () => unsubscribe();
     }, []);
 
     const handleLogout = async () => {
         try {
-            await signOut(auth); // Sign out the user
-            setUser(null); // Clear the user state
+            await signOut(auth);
+            setUser(null);
         } catch (err) {
             console.error("Error logging out:", err.message);
         }
     };
 
-    // Generate Gravatar URL
     const getGravatarUrl = (email) => {
         const hash = md5(email.trim().toLowerCase());
         return `https://www.gravatar.com/avatar/${hash}?d=identicon`;
@@ -67,10 +64,12 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center space-x-4">
                     {user ? (
                         <><Link href="/profile">
-                            <img
+                            <Image
                                 src={getGravatarUrl(user.email)}
                                 alt="Profile"
                                 className="w-8 h-8 rounded-full cursor-pointer"
+                                width={32}
+                                height={32}
                             />
                         </Link>
                             <button

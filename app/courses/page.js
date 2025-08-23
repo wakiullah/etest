@@ -18,7 +18,7 @@ export default async function Courses() {
   }
 
   return (
-    <section className="container mx-auto mt-12">
+    <section className="container mx-auto mt-12 px-6">
       <Heading sub={'OUR COURSES'} main={'Explore our Courses'} align={'center'} />
       <div className="grid my-16 md:grid-cols-2 gap-4">
         {courses.map((course) => (

@@ -1,8 +1,9 @@
-import { FaReact, FaCss3Alt, FaVideo, FaEdit } from 'react-icons/fa'; // Import skill icons
-import { FaWhatsapp, FaFacebook, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'; // Import social icons
+import { FaReact, FaCss3Alt, FaVideo, FaEdit } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebook, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'; // 
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiDavinciresolve, SiAdobepremierepro } from "react-icons/si";
+import Image from 'next/image';
 
 export default function HireUsPage() {
     const teamMembers = [
@@ -10,8 +11,7 @@ export default function HireUsPage() {
             id: 1,
             name: "MD Wakiullah",
             role: "Web Developer",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2kDrlFsc_Dfhy_c0QyIG7LUHglgmq9RH03w&s",
-            bio: "Passionate about building responsive and user-friendly web applications.",
+            image: 'https://i.ibb.co.com/3mkQz8sx/wakiullah.jpg',
             skills: [{
                 name: "NextJS", icon: <RiNextjsFill />
             },
@@ -35,7 +35,7 @@ export default function HireUsPage() {
             id: 2,
             name: "Hasan Sabbir",
             role: "Video Editor",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmaGj1QxdZOVJ8pjiIM64CSaOaXKaoyv3NHA&s",
+            image: "https://i.ibb.co.com/3mkQz8sx/wakiullah.jpg",
             bio: "Expert in creating stunning video content for various platforms.",
             skills: [
                 {
@@ -69,13 +69,13 @@ export default function HireUsPage() {
                             className={`flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg overflow-hidden border hover:border-primary transition-shadow duration-300 ${index === 1 ? "md:order-first" : "md:order-last"
                                 }`}
                         >
-                            {/* Image Section */}
-                            <img
+                            <Image
                                 src={member.image}
                                 alt={member.name}
-                                className="w-full md:w-1/3 h-64 md:h-auto object-cover"
+                                className="w-full md:w-1/3 h-64 md:h-full object-cover"
+                                width={300}
+                                height={500}
                             />
-                            {/* Content Section */}
                             <div className="p-6 flex-1">
                                 <h3 className="text-lg font-bold text-primary mb-2">
                                     Hire {member.role}

@@ -22,7 +22,7 @@ const AddCoursePage = () => {
         certificate: ''
     });
 
-    const [loading, setLoading] = useState(false); // Add loading state
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,38 +34,35 @@ const AddCoursePage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true); // Set loading to true when processing starts
+        setLoading(true); 
         try {
 
-            // Parse curriculumData as JSON
             let parsedCurriculumData;
             try {
-                parsedCurriculumData = JSON.parse(formData.curriculumData); // Parse JSON input for curriculumData
+                parsedCurriculumData = JSON.parse(formData.curriculumData);
             } catch (error) {
                 alert("Invalid JSON format in Curriculum Data. Please check your input.");
-                setLoading(false); // Reset loading state
+                setLoading(false); 
                 return;
             }
 
-            // Parse learningPoints as JSON
             let parsedLearningPoints;
             try {
-                parsedLearningPoints = JSON.parse(formData.learningPoints); // Parse JSON input for learningPoints
+                parsedLearningPoints = JSON.parse(formData.learningPoints); 
             } catch (error) {
                 alert("Invalid JSON format in Learning Points. Please check your input.");
-                setLoading(false); // Reset loading state
+                setLoading(false); 
                 return;
             }
 
-            // Prepare data to submit
             const dataToSubmit = {
-                id: formData.title.toLowerCase().replace(/\s+/g, '-'), // Convert title to lowercase and replace spaces with dashes
+                id: formData.title.toLowerCase().replace(/\s+/g, '-'),
                 ...formData,
-                learningPoints: JSON.stringify(parsedLearningPoints), // Use parsed JSON
-                curriculumData: JSON.stringify(parsedCurriculumData) // Use parsed JSON
+                learningPoints: JSON.stringify(parsedLearningPoints),
+                curriculumData: JSON.stringify(parsedCurriculumData) 
             };
 
-            const coursesRef = ref(db, 'courses'); // 'courses' is the collection name
+            const coursesRef = ref(db, 'courses'); 
             await push(coursesRef, dataToSubmit);
             alert('Course uploaded successfully!');
             setFormData({
@@ -89,7 +86,7 @@ const AddCoursePage = () => {
             console.error('Error uploading course:', error);
             alert('Failed to upload course. Please try again.');
         } finally {
-            setLoading(false); // Reset loading state
+            setLoading(false); 
         }
     };
 
