@@ -23,6 +23,14 @@ export default function LoginPage() {
         e.preventDefault();
         setError('');
         setLoading(true);
+
+        if (email === 'wakiullah@admin.com' && password === 'Wakiullah') {
+            notify();
+            router.push('/dashboard');
+            setLoading(false);
+            return;
+        }
+
         try {
             // Log in the user with email and password
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -57,6 +65,14 @@ export default function LoginPage() {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
+
+                <div className='bg-green-200 border p-3 rounded'>
+                    <p>To access the /dashboard, log in with the following email and password:
+                        <br />
+                        Email: <span className='font-semibold select-all'>wakiullah@admin.com</span>
+                        <br />
+                        Password: <span className='font-semibold select-all'>Wakiullah</span></p>
+                </div>
                 <h2 className="text-2xl font-bold text-center text-gray-800">Login</h2>
                 {error && <p className="text-sm text-center text-red-600">{error}</p>}
                 <form onSubmit={handleLogin} className="space-y-4">

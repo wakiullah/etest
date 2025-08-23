@@ -34,7 +34,7 @@ export default function DashboardLayout({ children }) {
     if (!user) {
         return null;
     }
-    if (user.email !== 'wakiu@gmail.com') {
+    if (user.email !== 'wakiullah@admin.com') {
         redirect('/');
     }
 

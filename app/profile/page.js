@@ -2,7 +2,7 @@
 import md5 from 'md5'; // Import md5 for hashing email
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/firebase/firebase";
+import { auth } from "@/firebase/firebase"; // Import Firebase auth
 import Image from 'next/image';
 
 
@@ -17,12 +17,13 @@ export default function ProfilePage() {
                 setUser({
                     name: displayName || 'Anonymous User', 
                     email: email,
-                    image: photoURL || 'https://via.placeholder.com/150', 
+                    image: photoURL || 'https://via.placeholder.com/150',
                 });
             } else {
-                setUser(null); 
+                setUser(null); // No user is logged in
             }
             setLoading(false); 
+        });
 
         return () => unsubscribe(); 
     }, []);
